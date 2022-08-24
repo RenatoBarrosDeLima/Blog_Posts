@@ -4,6 +4,8 @@ import './styles.css';
 
 import Posts from '../../components/Posts'
 import Button from '../../components/Button';
+import TextInput from '../../components/TextInput';
+
 import { loadPostsApi } from '../../utils/load-posts';
 
 class Home extends Component {
@@ -70,20 +72,16 @@ class Home extends Component {
     return (
       <section className="container">
 
-        {!!searchValue && (
-          <>
+        <div className="search-container">
+          {!!searchValue && (
             <h1> Search value: {searchValue} </h1>
-            <br />
-            <br />
-          </>
-        )}
+          )}
 
-        <input
-          type="search"
-          onChange={this.handleChange}
-          value={searchValue}
-        />
-        <br /> <br />
+          <TextInput
+            handleChange={this.handleChange}
+            searchValue={searchValue}
+          />
+        </div>
 
         {filteredPosts.length > 0 && (
           <Posts posts={filteredPosts} />
