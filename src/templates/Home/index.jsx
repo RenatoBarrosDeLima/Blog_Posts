@@ -13,7 +13,7 @@ class Home extends Component {
     posts: [],
     allPosts: [],
     page: 0,
-    postsPerPage: 2,
+    postsPerPage: 10,
     searchValue: ''
   };
 
@@ -50,9 +50,9 @@ class Home extends Component {
     });
   };
 
-  handleChange = (e) => {
+  handleInputChange = (e) => {
     const { value } = e.target;
-    this.setState({ searchValue: value });
+    this.setState({ ...this.state, searchValue: value });
 
   }
 
@@ -78,7 +78,7 @@ class Home extends Component {
           )}
 
           <TextInput
-            handleChange={this.handleChange}
+            handleInputChange={this.handleInputChange}
             searchValue={searchValue}
           />
         </div>
