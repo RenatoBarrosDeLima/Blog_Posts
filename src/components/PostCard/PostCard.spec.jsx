@@ -14,7 +14,7 @@ describe('<PostCard />', () => {
         expect(screen.getByAltText(/Title 1/i)).toHaveAttribute('src', 'img/img.png');
 
     });
- 
+
     it('should match snapshot', () => {
         const { container } = render(<PostCard {...props} />);
 
