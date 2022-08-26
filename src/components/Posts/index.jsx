@@ -15,7 +15,7 @@ const Posts = ({ posts = [] }) => {
 };
 
 Posts.defaultProps = {
-  posts: P.array,
+  posts: [],
 };
 
 Posts.propTypes = {
